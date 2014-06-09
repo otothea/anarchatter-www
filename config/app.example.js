@@ -4,9 +4,9 @@ module.exports = {
   httpsPort:  "8081",
   protocol:   "http",
 
-  currentPort: (function() {
+  currentPort: function() {
     return module.exports.protocol === 'https' ? module.exports.httpsPort : module.exports.httpPort
-  })(),
+  },
 
   ssl: {
     key:  "/path/to/priate/key",
