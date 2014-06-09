@@ -1,0 +1,137 @@
+extend layout
+
+block content
+  if homestead.password || ! homestead.private
+    if ! embed
+      #homestead-flag(class="#{homestead.color}")
+        i.icon-flag(title="Homestead this chat")
+
+      form#homestead-form.clearfix(action="#")
+        if homestead.private
+          span.red
+            | This chat room is already a homestead
+        else
+          div
+            | Homestead this chat room : 
+            input#homestead-password(type="password", name="password", placeholder="leave blank for public homestead", maxlength="25") 
+          div
+            | and/or link it to a hostname : 
+            input#homestead-host(type="text", name="host", placeholder="example.com", maxlength="1000")
+            button#homestead-submit(type="submit")
+              i.icon-chevron-right
+
+    article#user-box
+      ul#user-options
+        li.option-item.private-message
+          i.icon-envelope
+          |  
+          span Message User
+        li.option-item.mute
+          i.icon-volume-off
+          |  
+          span Mute User
+        li.option-item.unmute
+          i.icon-volume-up
+          |  
+          span Unmute User
+        li.option-item.kick
+          i.icon-warning-sign
+          |  
+          span Vote Kick User
+        li.option-item.ban
+          i.icon-ban-circle
+          |  
+          span Vote Ban User
+      ul#user-list
+
+    article#chat-box
+      ul#chat-list
+
+    form#private-message-form
+      p 
+        strong
+      textarea#private-message-text(name="private-message", maxlength="1000")
+      button#private-messagep-submit(type="submit")
+        i.icon-chevron-right
+
+    article#chat-controls.clearfix
+      div#chat-embed-icons
+        div.link(title="Embed Link")
+          i.icon-link
+        div.film(title="Embed Video")
+          i.icon-film
+        div.picture(title="Embed Image")
+          i.icon-picture
+      form#chat-form(action="#")
+        textarea#chat-input(type="text", name="chat-input", maxlength="2500")
+
+    div#transparent-pop
+      form#name-pop
+        p Change your name
+        input#name-input-pop(type="text", name="name", maxlength="50")
+        button#name-submit-pop(type="submit")
+          i.icon-chevron-right
+        p
+          a.login(href="#") login 
+          | or 
+          a.create-account(href="#") create an account
+      form#account-pop
+        p
+          | create account 
+          i.icon-flag
+        input#account-name-pop(type="text", name="name", placeholder="your new name", maxlength="50")
+        input#account-password-pop(type="password", name="password", placeholder="your new password", maxlength="25")
+        input#account-confirm-pop(type="password", name="confirm", placeholder="repeat new password", maxlength="25")
+        button#account-submit-pop(type="submit")
+          i.icon-chevron-right
+        a.back-arrow(href="#")
+          i.icon-chevron-sign-left
+      form#login-pop
+        p
+          | login 
+          i.icon-lock
+        input#login-name-pop(type="text", name="name", placeholder="your name", maxlength="50")
+        input#login-password-pop(type="password", name="password", placeholder="your password", maxlength="25")
+        button#login-submit-pop(type="submit")
+          i.icon-chevron-right
+        a.back-arrow(href="#")
+          i.icon-chevron-sign-left
+      form#link-pop
+        p
+          | Share a link
+          br
+          i
+            | ex: 'http://example.com'
+        input#link-input-pop(type="text", name="link", maxlength="1000")
+        button#link-submit-pop(type="submit")
+          i.icon-chevron-right
+      form#film-pop
+        p
+          | Share a YouTube or Vimeo video
+          br
+          i
+            | ex: 'http://youtube.com/watch?v=123456'
+            br
+            | or 'http://vimeo.com/123456789'
+        input#film-input-pop(type="text", name="film", maxlength="1000")
+        button#film-submit-pop(type="submit")
+          i.icon-chevron-right
+      form#picture-pop
+        p
+          | Share an image link
+          br
+          i
+            | ex: 'http://example.com/images/picture.jpg'
+        input#picture-input-pop(type="text", name="picture", maxlength="1000")
+        button#picture-submit-pop(type="submit")
+          i.icon-chevron-right
+      form#success-pop.green
+      form#error-pop.red
+      form#message-pop
+
+    if room != ""
+      script.
+        var room = "#{room}";
+        var embed = "#{embed}";
+        var host = "#{homestead.host}";
+      script(type="text/javascript", src="/js/chat.js")

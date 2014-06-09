@@ -1,0 +1,11 @@
+extend layout
+
+block content
+  if room
+    form#homestead-form(style="display:block;", action="", method="POST")
+      | This chat is password protected : 
+      input#homestead-password(type="password", name="password", placeholder="enter password")
+      button#homestead-submit(type="submit")
+        i.icon-chevron-right
+
+  script $('#homestead-password').focus();

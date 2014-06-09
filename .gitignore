@@ -1,0 +1,5 @@
+/config/app.js
+/public/js/config/client.js
+/logs/*
+/node_modules/*
+npm-debug.log

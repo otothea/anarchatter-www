@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css")
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css")
+    link(rel="stylesheet", href="/css/chat.css")
+    link(rel="stylesheet", href="/css/gemoticons.css")
+    script(type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    script(type="text/javascript", src="/js/common.js")
+    script(type="text/javascript", src="/js/gemoticons.js")
+    script(type="text/javascript", src="/socket.io/socket.io.js")
+    script(type="text/javascript", src="/js/config/client.js")
+    script.
+      var jwToken = '#{jwToken}';
+  body
+    section#chat-wrap
+      if !embed
+        script var embed = '#{embed}'
+        a#home-link(href="/") 
+        form#room-form(action="#")
+          h1#chat-header
+            span
+              if room
+                input#room-input(type="text",name="room", placeholder="room", value="#{room}", maxlength="50")
+              else
+                input#room-input(type="text",name="room", placeholder="room")
+              button#room-submit(type="submit")
+                i.icon-chevron-right
+ 
+      block content

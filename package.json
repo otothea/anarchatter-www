@@ -1,0 +1,27 @@
+{
+  "name": "anarchatter-www",
+  "version": "0.0.1",
+  "description": "Anarchatter",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~4",
+    "connect": "~3",
+    "body-parser": "~1",
+    "cookie-parser": "~1",
+    "express-session": "~1",
+    "express-rewrite": "~0",
+    "jade": "~1",
+    "mongodb": "~1",
+    "mongoskin": "~1",
+    "socket.io": "~0",
+    "jsonwebtoken": "~0",
+    "socketio-jwt": "~2"
+  },
+  "devDependencies": {},
+  "author": "Oscar Armstrong",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/otothea/anarchatter-www.git"
+  },
+  "license": "ISC"
+}

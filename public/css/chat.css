@@ -1,0 +1,501 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+    font-family: Arial;
+    background-color: rgba(0,0,0,0);
+}
+
+img { border: none; outline: none; }
+
+#chat-wrap {
+    width: 100%;
+    min-width: 360px;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    outline: 1px solid #CCC;
+    position: relative;
+    overflow-y: scroll;
+}
+
+    #chat-wrap .red { color: #c00; }
+    #chat-wrap .green { color: green; }
+
+    #chat-wrap i {
+        cursor: pointer;
+    }
+
+    #chat-wrap h3 {
+        padding: 10px 0 10px 10px;
+        background-color: #000;
+        color: #FFF;
+        margin: 10px 0 0 0;
+        font-size: 10px;
+        line-height: 10px;
+        height: 10px;
+        outline: 1px solid #000;
+        font-weight: normal;
+    }
+    
+    #chat-wrap iframe { border: none; }
+
+    #chat-wrap #home-link {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 142px;
+        height: 30px;
+    }
+    
+    #chat-wrap #homestead-flag {
+        position: absolute;
+        top: 16px;
+        left: 161px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    
+        #chat-wrap #homestead-flag.red {
+            color: #C00;
+        }
+        
+        #chat-wrap #homestead-flag.green {
+            color: green;
+        }
+    
+    #chat-wrap #homestead-form {
+        display: none;
+        padding: 15px;
+        outline: 1px solid #CCC;
+        margin: 10px 10px 0 10px;
+        background-color: #F3F3F3;
+    }
+    
+        #chat-wrap #homestead-form div {
+            float: left;
+        }
+        
+        #chat-wrap #homestead-form p {
+            margin: 0;
+        }
+    
+    #chat-wrap form { margin: 0; }
+    
+        #chat-wrap input,
+        #chat-wrap textarea {
+            border: none;
+            outline: 1px solid #CCC;
+            margin: 0;
+            padding: 0 10px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 14px;
+            border-radius: 0;
+            width: 225px;
+        }
+        
+        #chat-wrap input[type=submit] {
+            background-color: #000;
+            outline-color: #000;
+            color: #FFF;
+        }
+        
+        #chat-wrap input:focus {
+            outline-color: #000;
+            border-color: #000;
+        }
+        
+        #chat-wrap textarea {
+            text-indent: 0px;
+            padding: 6px;
+            resize: vertical;
+        }
+        
+        #chat-wrap button {
+            padding: 0 10px;
+            height: 30px;
+            background-color: #000;
+            border: none;
+            outline: 1px solid #000;
+            color: #FFF;
+            margin: 0;
+        }
+        
+        #room-form {
+            height: 43px;
+        }
+
+    #chat-wrap #chat-header {
+        margin: 0;
+        padding: 10px 10px 0 10px;
+        height: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        background: url('../images/logo.png') 10px 15px no-repeat;
+        background-size: auto 25px;
+    }
+
+        #chat-wrap #chat-header span {
+            float: right;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 12px;
+            right: 0;
+        }
+
+        #chat-wrap #chat-header span b {
+            cursor: pointer;
+        }
+        
+        #chat-wrap #chat-header #room-input {
+            height: 30px;
+            width: 110px;
+        }
+
+    #chat-wrap #chat-controls {
+        padding: 0 0 10px 0;
+        position: relative;
+    }
+
+        #chat-wrap #chat-controls #chat-input {
+            height: 28px;
+            margin: 0 0 0 10px;
+            float: left;
+        }
+
+        #chat-wrap #chat-controls #chat-embed-icons {
+            height: 40px;
+            max-width: 159px;
+            width: 25%;
+            right: 0;
+            margin-right: 10px;
+            padding: 0;
+            text-align: center;
+            float: right;
+        }
+        
+            #chat-wrap #chat-controls #chat-embed-icons div {
+                width: 30%;
+                float: left;
+                line-height: 40px;
+                cursor: pointer;
+                background-color: #FFF;
+            }
+            
+                #chat-wrap #chat-controls #chat-embed-icons ul.film-type {
+                    display: none;
+                    position: absolute;
+                    bottom: 20px;
+                    width: 100%;
+                    bottom: 50px;
+                    background-color: #CCC;
+                    margin: 0;
+                    padding: 0;
+                    color: #000;
+                }
+                
+                    #chat-wrap #chat-controls #chat-embed-icons ul.film-type li {
+                        padding: 5px 0;
+                        cursor: pointer;
+                        list-style: none;
+                        border: 1px solid #CCC;
+                        border-top: 1px solid #EEE;
+                    }
+                    
+                    #chat-wrap #chat-controls #chat-embed-icons ul.film-type li:hover {
+                        background-color: #000;
+                        color: #FFF;
+                    }
+            
+            #chat-wrap #chat-controls #chat-embed-icons div:hover {
+                background-color: #EEE;
+                outline: 1px solid #CCC;
+            }
+            
+            #chat-wrap #chat-controls #chat-embed-icons div:nth-child(even) {
+                margin: 0 5%;
+            }
+        
+    #chat-wrap #user-info {
+        float: right;
+        text-align: right;
+        height: 10px;
+        margin-right: 10px;
+        min-width: 50%;
+    }
+    
+    #chat-wrap #chat-box-title {
+        width: auto;
+        margin: 10px 10px 0 10px;
+    }
+    
+        #chat-wrap #chat-box-title #room-name,
+        #chat-wrap #chat-box-title #chat-username {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+    #chat-wrap #chat-box {
+        width: auto;
+        height: 500px;
+        overflow-y: scroll;
+        margin: 10px;
+        padding: 0;
+        background-color: #FFF;
+        outline: 1px solid #CCC;
+        position: relative;
+    }
+
+        #chat-wrap #chat-box #chat-list {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+            #chat-wrap #chat-box #chat-list .chat-message,
+            #chat-wrap #chat-box #chat-list .chat-update,
+            #chat-wrap #chat-box #chat-list .room-item {
+                list-style: none;
+                padding: 10px;
+                width: auto;
+                border-top: 1px solid #EFEFEF;
+            }
+            
+                #chat-wrap #chat-box #chat-list .chat-message .message-username {
+                    font-size: 75%;
+                    line-height: 75%;
+                    color: #AAA;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                
+                #chat-wrap #chat-box #chat-list .chat-message .message-text {
+                    font-size: 90%;
+                    line-height: 130%;
+                    margin: 10px 0 0 0;
+                    padding: 0;
+                }
+
+            #chat-wrap #chat-box #chat-list .chat-message.my-message {
+                background-color: #F6F6F6;
+            }
+            
+            #chat-wrap #chat-box #chat-list .chat-message.private {
+                background-color: #666666;
+                color: #FFF;
+            }
+            
+            #chat-wrap #chat-box #chat-list .chat-message.borderless {
+                border: none;
+                padding-top: 0;
+            }
+            
+                #chat-wrap #chat-box #chat-list .chat-message.borderless .message-text {
+                    border: none;
+                    padding-top: 0;
+                    margin: 0;
+                }
+            
+            #chat-wrap #chat-box #chat-list .room-item {
+                width: 42%;
+                padding: 10px 4%;
+                float:left;
+                clear: none;
+                color: #000;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                outline: 1px solid #CCC;
+                border: none;
+            }
+            
+            #chat-wrap #chat-box #chat-list .room-item:hover {
+                background-color: #CCC;
+            }
+            
+            #chat-wrap #chat-box #chat-list .chat-update {
+                color: #CCC;
+                font-size: 85%;
+                padding: 5px 10px;
+            }
+            
+        #chat-wrap #private-message-form {
+            display: none;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            margin: 0;
+            padding: 10px;
+            background-color: #EEE;
+            z-index: 999;
+        }
+        
+            #chat-wrap #private-message-form textarea {
+                height: 20px;
+            }
+            
+    #user-options {
+        display: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-size: 75%;
+        cursor: pointer;
+        border-bottom: 1px solid #CCC;
+        background-color: #000;
+        color: #FFF;
+    }
+
+        #user-options .option-item {
+            padding: 5px 0 5px 10px;
+            list-style: none;
+            border-bottom: 1px solid #CCC;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+            #user-options .option-item span {
+                margin-left: 5px;
+            }
+            
+            #user-options .option-item i {
+                width: 10px !important;
+            }
+        
+        #user-options .option-item:hover {
+            background-color: #CCC;
+            color: #000;
+        }
+        
+        #user-options .option-item:last-child {
+            border: none;
+        }
+            
+    #user-box {
+        float: right;
+        max-width: 159px;
+        width: 25%;
+        margin: 10px 10px 0 10px;
+        outline: 1px solid #CCC;
+        background-color: #F3F3F3;
+        position: relative;
+        overflow: hidden;
+    }
+
+        #user-box #user-list {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+            #user-box #user-list .user-item {
+                list-style: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 85%;
+            }
+            
+                #user-box #user-list .user-item.self {
+                    outline: 1px solid #CCC;
+                }
+                
+                #user-box #user-list .user-item.selected {
+                    background-color: #CCC;
+                }
+                
+                #user-box #user-list .user-item i {
+                    display: none;
+                    margin-right: 5px;
+                }
+                
+                #user-box #user-list .user-item.mute i.mute {
+                    display: inline-block;
+                }
+            
+            #user-box #user-list .user-item:hover {
+                background-color: #CCC;
+            }
+            
+#transparent-pop {
+    display: none;
+    position: fixed;
+    background-color: rgba(1,1,1,0.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+    #transparent-pop form {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -79px;
+        margin-left: -157px;
+        width: 275px;
+        height: auto;
+        background-color: #FFF;
+        text-align: center;
+        padding: 20px 20px;
+        outline: 4px solid #000;
+    }
+    
+        #transparent-pop form input + input,
+        #transparent-pop form input + input + button {
+            margin-top: 20px;
+        }
+        
+        #transparent-pop form input[type=password]:not(#account-password-pop) {
+            width: 196px;
+        }
+    
+        #transparent-pop form p {
+            font-weight: bold;
+            margin: 20px auto;
+        }
+        
+        #transparent-pop form p:first-child {
+            margin: 0 auto 20px auto;
+        }
+        
+        #transparent-pop form p:last-child {
+            margin: 20px auto 0 auto;
+        }
+        
+            #transparent-pop form p i {
+                font-weight: normal;
+                font-size: 75%;
+                line-height: 100%;
+            }
+            
+        #transparent-pop .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 35px;
+            font-size: 120%;
+            color: #000;
+        }
+        
+        #transparent-pop .back-arrow:hover {
+            text-decoration: none;
+        }
