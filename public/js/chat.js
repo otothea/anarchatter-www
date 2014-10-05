@@ -193,10 +193,10 @@ $(document).ready(function() {
     *******************/
 
     if (config.protocol === 'https') {
-      var chat = io.connect('https://' + config.host + ':' + config.httpsPort + '/chat', { query: 'token='+jwToken, secure: true });
+      var chat = io.connect('https://' + config.host + '/chat', { query: 'token='+jwToken, secure: true });
     }
     else {
-      var chat = io.connect('http://' + config.host + ':' + config.httpPort + '/chat', { query: 'token='+jwToken });
+      var chat = io.connect('http://' + config.host + '/chat', { query: 'token='+jwToken });
     }
     chat.once('connect', function(socket) {
 

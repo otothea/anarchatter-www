@@ -31,10 +31,10 @@ var roomBox = new RoomBox();
 *******************/
 
 if (config.protocol === 'https') {
-  var index = io.connect('https://' + config.host + ':' + config.httpsPort + '/index', { secure: true, query: 'token='+jwToken });
+  var index = io.connect('https://' + config.host + '/index', { secure: true, query: 'token='+jwToken });
 }
 else {
-  var index = io.connect('http://' + config.host + ':' + config.httpPort + '/index', { query: 'token='+jwToken });
+  var index = io.connect('http://' + config.host + '/index', { query: 'token='+jwToken });
 }        
 index.once('connect', function(socket) {
   // On init chat history
